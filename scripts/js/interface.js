@@ -50,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (document.body.classList.contains('menu'))
 			document.body.classList.remove('menu');
 	});
+
+	Parallax.initialize(articles);
 });
 
 window.addEventListener('load', loadBackground);
