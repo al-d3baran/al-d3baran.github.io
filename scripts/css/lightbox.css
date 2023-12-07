@@ -1,0 +1,18 @@
+#lightbox {
+	display: block;
+	position: fixed;
+	background-color: rgba(0, 0, 0, .75);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	opacity: 0;
+	transition: opacity .25s;
+}
+
+#lightbox.open {
+	opacity: 1;
+}

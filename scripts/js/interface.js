@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	Parallax.initialize(articles);
+	Lightbox.initialize(document.querySelectorAll('img'));
 });
 
 window.addEventListener('load', loadBackground);
