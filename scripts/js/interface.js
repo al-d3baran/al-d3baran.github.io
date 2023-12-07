@@ -1,16 +1,24 @@
 const articles = document.querySelectorAll('article');
 
-let backgroundsLoaded = 0;
+var backgroundsLoaded = 0;
 
 function loadBackground() {
 	articles.forEach(article => {
 		let y = article.offsetTop - window.scrollY - window.innerHeight;
 
-		if (y <= 0 && !article.classList.contains('loaded')) {
-			backgroundsLoaded += 1;
-			article.style.backgroundImage = `url(${article.dataset.background})`;
+		if (y <= 0 && article.classList.length === 0) {
+			article.classList.add('loading');
 
-			article.classList.add('loaded');
+			let image = new Image();
+
+			image.addEventListener('load', () => {
+				article.style.backgroundImage = `url(${article.dataset.background})`;
+				article.classList.replace('loading', 'loaded');
+
+				backgroundsLoaded += 1;
+			})
+
+			image.src = article.dataset.background;
 		};
 
 		if (backgroundsLoaded == articles.length)

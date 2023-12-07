@@ -61,6 +61,8 @@ article {
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
+	background-color: #111;
+	background-image: none;
 	text-shadow: 1px 1px #000;
 }
 
