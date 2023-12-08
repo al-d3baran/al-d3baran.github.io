@@ -1,9 +1,9 @@
 class Parallax {
-	static initialize(articles) {
+	static initialize(backgrounds) {
 		const update = () => {
-			articles.forEach(article => {
-				const yOffset = Math.round(article.getBoundingClientRect().top / 9 * 100);
-				article.style.backgroundPosition = `center ${yOffset / 100}px`;
+			backgrounds.forEach(background => {
+				const yOffset = Math.round(background.getBoundingClientRect().top / 9 * 100);
+				background.style.backgroundPosition = `center ${yOffset / 100}px`;
 			});
 
 			requestAnimationFrame(update);

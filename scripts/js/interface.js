@@ -1,10 +1,10 @@
-const articles = document.querySelectorAll('article');
-
+var articles;
 var backgroundsLoaded = 0;
 
-function loadBackground() {
+function loadBackgrounds() {
 	articles.forEach(article => {
-		let y = article.offsetTop - window.scrollY - window.innerHeight;
+		const div = article.querySelector('.background');
+		const y = article.offsetTop - window.scrollY - window.innerHeight;
 
 		if (y <= 0 && article.classList.length === 0) {
 			article.classList.add('loading');
@@ -12,21 +12,23 @@ function loadBackground() {
 			let image = new Image();
 
 			image.addEventListener('load', () => {
-				article.style.backgroundImage = `url(${article.dataset.background})`;
+				div.style.backgroundImage = `url(${image.src})`;
 				article.classList.replace('loading', 'loaded');
 
 				backgroundsLoaded += 1;
 			})
 
-			image.src = article.dataset.background;
+			image.src = div.dataset.background;
 		};
 
 		if (backgroundsLoaded == articles.length)
-			window.removeEventListener('scroll', loadBackground);
+			window.removeEventListener('scroll', loadBackgrounds);
 	});
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+	articles = document.querySelectorAll('article');
+
 	document.getElementById('navButton').addEventListener('click', e => {
 		e.preventDefault();
 
@@ -51,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			document.body.classList.remove('menu');
 	});
 
-	Parallax.initialize(articles);
+	loadBackgrounds();
+	Parallax.initialize(document.querySelectorAll('.background'));
 	Lightbox.initialize(document.querySelectorAll('img'));
 });
 
-window.addEventListener('load', loadBackground);
-window.addEventListener('scroll', loadBackground);
+window.addEventListener('scroll', loadBackgrounds);
