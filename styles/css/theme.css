@@ -1,0 +1,70 @@
+body {
+	background-color: #111;
+}
+
+aside {
+	background-color: #000;
+}
+
+aside section nav a {
+	color: #fff;
+}
+
+aside section nav a:hover {
+	color: #ff6600;
+}
+
+article {
+	text-shadow: 1px 1px #000;
+}
+
+article .background {
+	background-color: #111;
+}
+
+header h2 {
+	color: #fff;
+}
+
+article section {
+	border-top-color: #000;
+	border-bottom-color: #000;
+	background-color: #222;
+}
+
+article section div {
+	color: #dadada;
+}
+
+li span {
+	color: #9a9a9a;
+}
+
+footer {
+	background-color: #ffe2ab;
+	color: #575757;
+}
+
+footer a {
+	color: #a14100;
+}
+
+footer a:hover {
+	color: #ff6600;
+}
+
+#pronounce {
+	color: #48748d;
+}
+
+#pronounce:hover {
+	color: #43a3db;
+}
+
+#navButton span {
+	color: #fff;
+}
+
+#navButton:hover span {
+	color: #ff6600;
+}

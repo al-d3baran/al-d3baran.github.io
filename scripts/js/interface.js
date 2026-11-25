@@ -39,9 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		nav.addEventListener('click', e => {
 			e.preventDefault();
 
-			document.querySelector(nav.getAttribute('href')).scrollIntoView({
-				behavior: 'smooth'
-			});
+			document.querySelector(nav.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
 
 			if (window.innerWidth <= 600)
 				document.body.classList.remove('menu');
@@ -51,6 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('main').addEventListener('click', () => {
 		if (document.body.classList.contains('menu'))
 			document.body.classList.remove('menu');
+	});
+
+	document.querySelector('#pronounce').addEventListener('click', btn => {
+		new Audio(btn.target.dataset.audio).play();
 	});
 
 	loadBackgrounds();

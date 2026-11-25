@@ -1,12 +1,12 @@
 @font-face {
 	font-family: "Open Sans";
-	src: url("../ttf/OpenSans-Light.ttf");
+	src: url("../../assets/ttf/OpenSans-Light.ttf");
 	font-weight: 300;
 }
 
 @font-face {
 	font-family: "Open Sans";
-	src: url("../ttf/OpenSans-Regular.ttf");
+	src: url("../../assets/ttf/OpenSans-Regular.ttf");
 	font-weight: 400;
 }
 
@@ -25,7 +25,6 @@ body {
 	font-size: 1.4rem;
 	font-weight: 400;
 	user-select: none;
-	background-color: #111;
 }
 
 aside {
@@ -35,7 +34,6 @@ aside {
 	right: -320px;
 	width: 320px;
 	height: 100%;
-	background-color: #000;
 	transition: right .25s;
 }
 
@@ -46,7 +44,7 @@ aside section {
 aside section div {
 	width: 100%;
 	height: 192px;
-	background-image: url("../../images/logo.png");
+	background-image: url("../../assets/png/logo.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
@@ -62,21 +60,12 @@ aside section nav a {
 	margin: 8px;
 	font-size: 2.8em;
 	text-decoration: none;
-	color: #fff;
 	transition: color .25s;
-}
-
-aside section nav a:hover {
-	color: #ff6600;
 }
 
 main {
 	width: 100%;
 	transition: width .25s;
-}
-
-article {
-	text-shadow: 1px 1px #000;
 }
 
 article .background {
@@ -87,7 +76,6 @@ article .background {
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-	background-color: #111;
 	background-image: none;
 	opacity: 0;
 	transition: opacity .5s;
@@ -112,22 +100,21 @@ header {
 header h2 {
 	font-size: 3.2em;
 	font-weight: 300;
-	color: #fff;
 	margin: 0;
 }
 
 article section {
-	border-top: 1px solid #000;
-	border-bottom: 1px solid #000;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
 	min-height: 50vh;
-	background-color: #222;
 }
 
 article section div {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 72px 12px;
-	color: #dadada;
 	font-size: 1.4em;
 	text-align: justify;
 	line-height: 1.6em;
@@ -162,26 +149,30 @@ li {
 }
 
 li span {
-	color: #9a9a9a;
 	margin-right: 12px;
 }
 
+#pronounce {
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	font: inherit;
+}
+
+#pronounce:hover {
+	text-decoration: underline;
+}
+
 footer {
-	background-color: #ffe2ab;
 	padding: 12px;
 	text-align: center;
 	font-size: .8em;
-	color: #575757;
 }
 
 footer a {
 	text-decoration: none;
-	color: #a14100;
 	transition: color .25s;
-}
-
-footer a:hover {
-	color: #ff6600;
 }
 
 #navButton {
@@ -198,12 +189,7 @@ footer a:hover {
 #navButton span {
 	position: absolute;
 	font-size: 3.2em;
-	color: #fff;
 	transition: opacity .25s, color .25s;
-}
-
-#navButton:hover span {
-	color: #ff6600;
 }
 
 #navButton span:first-of-type {
